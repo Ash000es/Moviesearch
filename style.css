@@ -1,3 +1,5 @@
+
+
 head {
     text-align: center;
     background-color: #ef6b68;
@@ -20,12 +22,8 @@ head {
     padding-top: 40px;
     margin: 0;
   }
-  div {
-    width: 400px;
-    margin: auto;
-    text-align: center;
-    margin-top: 25px;
-  }
+
+ 
   input {
     width: 350px;
     height: 37px;
@@ -43,7 +41,7 @@ head {
   }
   button {
     width: 125px;
-    height: 30px;
+    height: 37px;
     border-radius: 2px;
     border-color: inherit;
     background-color: #1f233e;
@@ -55,6 +53,8 @@ head {
     text-align: center;
     color: #ef6b68;
     margin-right: -3px;
+    
+    }
   }
   button:hover {
     color: #ffffff;
@@ -67,8 +67,21 @@ head {
     color: #ef6b68;
     cursor: pointer;
   }
-  li{
+  .table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
 
-    display: inline;
-    vertical-align: bottom;
-  }
+ul#list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+	}
+	ul#list li {
+		display: inline;
+    }
+    /*span{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+  

@@ -21,15 +21,13 @@ fetch('endpoint')
     results.map(result=> { 
         console.log(result.poster_path)
         const posterLink= `http://image.tmdb.org/t/p/w185//${result.poster_path}`
-console.log(posterLink);
-
-function displaySuggestions{
-let newItem = document.createElement("img");
-newItem.src = posterLink;
-let ul = document.getElementById("imageField");
-ul.appendChild(newItem) 
-    }
-    })
+console.log(posterLink);})
   });
-}
+};
+.then (function displaySuggestions (posterLink){
+  let newItem = document.createElement("img");
+  newItem.src = posterLink;
+  let ul = document.getElementById("imageField");
+  ul.appendChild(newItem) 
+      });
   submit.addEventListener('click', displaySuggestions);

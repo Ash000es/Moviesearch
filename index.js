@@ -7,7 +7,6 @@ const url= 'https://api.themoviedb.org/3/movie/popular?api_key=3e12504afe592b359
 const wordQuery = inputField.value;
 
 // get information 
-const getSuggestions = () => {
 
   const endpoint = `${url}${wordQuery}`;
 
@@ -22,12 +21,12 @@ fetch('endpoint')
         console.log(result.poster_path)
         const posterLink= `http://image.tmdb.org/t/p/w185//${result.poster_path}`
 console.log(posterLink);})
-  });
-};
+  })
 .then (function displaySuggestions (posterLink){
   let newItem = document.createElement("img");
   newItem.src = posterLink;
   let ul = document.getElementById("imageField");
   ul.appendChild(newItem) 
       });
+      
   submit.addEventListener('click', displaySuggestions);

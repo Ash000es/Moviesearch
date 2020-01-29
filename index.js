@@ -19,25 +19,31 @@ fetch('https://api.themoviedb.org/3/movie/popular?api_key=3e12504afe592b359b01ff
   .then(function(myJson) {
     console.log(myJson.results);
    const {results} =myJson
-    results.map(result=> { 
+   return results.map(result=> { 
         console.log(result.poster_path)
         const posterLink= `http://image.tmdb.org/t/p/w185//${result.poster_path}`
         const titleLink= `http://image.tmdb.org/t/p/w185//${result.original_title}`
 console.log(posterLink);
-let newItem = document.createElement("img")
-let newItem2 = document.createElement("li")
-let textItem= document.createElement('span')
-newItem.src= 'posterLink'
-textItem.innerHTML= 'titleLink'
-parent.appendChild(child);
-newItem2.appendChild(newItem);
+console.log(titleLink);
+
+let newItem = document.createElement("img");
+newItem.src= posterLink;
+let finalTry= document.getElementById('imageField');
+finalTry.appendChild(newItem);
+
+
+
+let newItem2 = document.createElement("li");
 ul.appendChild(newItem2);
-newItem.appendChild(textItem);
+
+
+let textItem= document.createElement('span');
+textItem.innerHTML= titleLink;
+text.appendChild(textItem);
+
 
 })
-})
-.catch(function(error) {
-  console.log(error)
 });
+
 
  // submit.addEventListener('click', displaySuggestions); 

@@ -10,7 +10,7 @@ const wordQuery = inputField.value;
 
   const endpoint = `${url}${wordQuery}`;
 
-fetch('endpoint')
+fetch('https://api.themoviedb.org/3/movie/popular?api_key=3e12504afe592b359b01ff7d91ac166f&language=en-US&page=1')
   .then(function(response) {
     return response.json();
   })
@@ -28,5 +28,5 @@ console.log(posterLink);})
   let ul = document.getElementById("imageField");
   ul.appendChild(newItem) 
       });
-      
+
   submit.addEventListener('click', displaySuggestions);

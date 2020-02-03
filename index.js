@@ -26,7 +26,6 @@ function sortVoteAverage(arr) {
   arr.sort((a, b) => {
     return a.vote_average > b.vote_average ? -1 : 1
     console.log(arr)
-    table.innerHTML = ''
   })
   return displayResults(arr)
 }
@@ -38,7 +37,6 @@ function releaseDate(arr) {
     let newDate2 = Date.parse(b.release_date)
     return newDate > newDate2 ? -1 : 1
     console.log(arr)
-    table.innerHTML = ''
   })
   return displayResults(arr)
 }
@@ -46,7 +44,7 @@ function releaseDate(arr) {
 // helper function
 function displayResults(arr) {
   return arr.map(subarr => {
-    console.log(subarr.poster_path)
+    //console.log(subarr.poster_path)
     if (!subarr.poster_path) return
     const posterLink = `http://image.tmdb.org/t/p/w185//${subarr.poster_path}`
 
@@ -55,8 +53,12 @@ function displayResults(arr) {
     newItem.src = posterLink
     table.appendChild(newItem)
 
-    const sortMyVoteCount = document.getElementById('sortButton')
-    sortMyVoteCount.addEventListener('click', () => sortVotecount(arr))
+    const sortMyResults1 = document.getElementById('button1')
+    const sortMyResults2 = document.getElementById('button2')
+    const sortMyResults3 = document.getElementById('button3')
+    sortMyResults1.addEventListener('click', () => sortVotecount(arr))
+    sortMyResults2.addEventListener('click', () => releaseDate(arr))
+    sortMyResults3.addEventListener('click', () => sortVoteAverage(arr))
     /*let titleBelow= document.createElement('span');
 titleBelow.innerHTML= titleLink;
 movieTitle.appendChild(titleBelow);*/

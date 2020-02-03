@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -27,7 +28,12 @@
       <h1>Enter a movie name</h1>
       <input id="input" placeholder="Search for a movie" type="text" />
       <button id="submit" type="button">Search</button>
-      <button id="sortButton" type="button">Sort Me</button>
+
+      <div class="btn-group d-flex justify-content-center" role="group" aria-label="Basic example">
+        <button id="button1" type="button" class="btn btn-secondary">Vote count</button>
+        <button id="button2" type="button" class="btn btn-secondary">Release date</button>
+        <button id="button3" type="button" class="btn btn-secondary">vote average</button>
+      </div>
 
       <div id="table"></div>
 

@@ -1,14 +1,11 @@
-
-let results= [],
-
-
+let results = []
 
 // Render results function
 
 function displayResults(arr) {
   return arr.map(subarr => {
     //console.log(subarr.poster_path)
-    const table = document.getElementById('table');
+    const table = document.getElementById('table')
     if (!subarr.poster_path) return
     const posterLink = `http://image.tmdb.org/t/p/w185//${subarr.poster_path}`
 
@@ -22,11 +19,10 @@ function displayResults(arr) {
      titleBelow.innerHTML= titleLink;
      movieTitle.appendChild(titleBelow);*/
     //
-
   })
 }
 
-// default fetch by popularity 
+// default fetch by popularity
 fetch(
   'https://api.themoviedb.org/3/movie/popular?api_key=3e12504afe592b359b01ff7d91ac166f&language=en-US&page=1'
 )
@@ -39,8 +35,8 @@ fetch(
     console.log(results)
     return displayResults(results)
   })
-  
-// fetch with keywords 
+
+// fetch with keywords
 
 function onSearch() {
   const inputField = document.getElementById('input')
@@ -59,11 +55,11 @@ function onSearch() {
     })
 }
 
-// search eventlistner 
-const submit = document.getElementById('submit');
-submit.onclick = () => onSearch();
+// search eventlistner
+const submit = document.getElementById('submit')
+submit.onclick = () => onSearch()
 
-// 3 sort functions 
+// 3 sort functions
 
 function releaseDate(results) {
   if (!results.length) return
@@ -95,21 +91,15 @@ function sortVoteAverage(arr) {
   return displayResults(arr)
 }
 
-
-
-// event listners and thier const 
+// event listners and thier const
 function dropdownActions(arr) {
-    
-  const sortMyResults1 = document.getElementById('button1');
-  const sortMyResults2 = document.getElementById('button2');
-  const sortMyResults3 = document.getElementById('button3');
-  sortMyResults1.addEventListener('click', () => sortVotecount(arr));
-  sortMyResults2.addEventListener('click', () => releaseDate(arr));
-  sortMyResults3.addEventListener('click', () => sortVoteAverage(arr));
-      
-      };
-
-
+  const sortMyResults1 = document.getElementById('button1')
+  const sortMyResults2 = document.getElementById('button2')
+  const sortMyResults3 = document.getElementById('button3')
+  sortMyResults1.addEventListener('click', () => sortVotecount(arr))
+  sortMyResults2.addEventListener('click', () => releaseDate(arr))
+  sortMyResults3.addEventListener('click', () => sortVoteAverage(arr))
+}
 
 /* display and animation function
 
@@ -117,12 +107,12 @@ const popup = document.getElementById('popup');
 const popupWraper = document.getElementById('popupWraper');*/
 //
 
-    // 1. when you click on the poster then log to the console.
-    //2. get the movie overview info
-    //3. create an empty pop up
-    //4. add movie overview info to the pop up
-    // 5. animate the pop up
-    //6 close the pop when clicking outside
+// 1. when you click on the poster then log to the console.
+//2. get the movie overview info
+//3. create an empty pop up
+//4. add movie overview info to the pop up
+// 5. animate the pop up
+//6 close the pop when clicking outside
 
 //add the animated class to the popupwrapper
 //set onclick for the popup wrapper*/
@@ -139,16 +129,3 @@ function onClickPoster(plot) {
     popupwraper.style.display = 'none'
   }
 }*/
-
-
-
-
-
-
-
- 
-
-
-
-
-

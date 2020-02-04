@@ -16,47 +16,54 @@
 </head>
 
 <body>
-  <div class='container'>
+  <div class='container border border-warning'>
 
-    <div class="row align-items-center">
+    <div class="row align-items-center w-100 border border-secoundary">
 
       <div class="col">
 
-        <div id="responseField class='d-flex'">
-          <h1 class=' display-4 mb-4'>Enter a movie name</h1>
-          <div class="input-group mb-3">
+        <div id="responseField" class=' mt-5 border border-primary'>
+          <h1 class=' display-4 mb-4 text-center'>Enter a movie name</h1>
+          <div class="input-group mb-3 border border-primary w-50">
             <input id="input" type="text" class="form-control" placeholder="Search for a movie"
               aria-label="Search for a movie" aria-describedby="button-addon2">
             <div class="input-group-append">
               <button id="submit" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
             </div>
-
-
-
-
-            <div class="dropdown d-flex">
-              <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sort button
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a id='button1' class="dropdown-item" href="#">Vote count</a>
-                <a id='button2' class="dropdown-item" href="#">Release date</a>
-                <a id='button3' class="dropdown-item" href="#">vote average</a>
-              </div>
-
-            </div>
           </div>
+
+
+
+
+          <div class="dropdown border border-success float-right">
+            <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sort button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a id='button1' class="dropdown-item" href="#">Vote count</a>
+              <a id='button2' class="dropdown-item" href="#">Release date</a>
+              <a id='button3' class="dropdown-item" href="#">vote average</a>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
 
 
-    <div class='row'>
+    <div class='row justify-content-around'>
       <div class="col">
-        <div id="table" class='list-group-item mb-3'></div>
+        <div id="table" class='list-group-item mb-3 border border-danger'>
+          <div id="title" class='border border-dark'>
 
-        <div id="title"></div>
+          </div>
+
+
+        </div>
+
+
       </div>
 
     </div>

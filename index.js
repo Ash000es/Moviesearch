@@ -10,6 +10,9 @@ function displayResults(arr) {
     const posterLink = `http://image.tmdb.org/t/p/w185//${subarr.poster_path}`
 
     let newItem = document.createElement('img')
+    // 1. when you click on the poster then log to the console.
+    //2. get the movie overview info
+    newItem.addEventListener('click', () => onClickPoster(subarr.overview))
     newItem.src = posterLink
     table.appendChild(newItem)
 
@@ -31,7 +34,7 @@ fetch(
   })
   .then(function(myJson) {
     // console.log(myJson);
-    const {results} = myJson
+    const { results } = myJson
     console.log(results)
     return displayResults(results)
   })
@@ -48,7 +51,7 @@ function onSearch() {
       return response.json()
     })
     .then(function(myJson) {
-      const {results} = myJson
+      const { results } = myJson
       console.log(results)
       table.innerHTML = ''
       return displayResults(results)
@@ -101,31 +104,24 @@ function dropdownActions(arr) {
   sortMyResults3.addEventListener('click', () => sortVoteAverage(arr))
 }
 
-/* display and animation function
+// display and animation function
 
-const popup = document.getElementById('popup');
-const popupWraper = document.getElementById('popupWraper');*/
-//
-
-// 1. when you click on the poster then log to the console.
-//2. get the movie overview info
 //3. create an empty pop up
-//4. add movie overview info to the pop up
-// 5. animate the pop up
-//6 close the pop when clicking outside
+const info = document.getElementById('info')
+const infoWrapper = document.getElementById('infoWrapper')
 
 //add the animated class to the popupwrapper
 //set onclick for the popup wrapper*/
-/*
 function onClickPoster(plot) {
-  // show info
-  popup.innerHTML = plot
-  popupwraper.style.display = 'block'
-  popupwraper.classList.add('animated', 'fadeIn')
-  popup.classList.add('animated', 'fadeIn')
-  // popupwraper.style.display = 'flex'
-  popupwraper.onclick = () => {
-    console.log('hi')
-    popupwraper.style.display = 'none'
+  info.innerHTML = plot
+  //4. add movie overview info to the pop up
+  infoWrapper.style.display = 'block'
+  // 5. animate the pop up
+  infoWrapper.classList.add('animated', 'fadeIn')
+  info.classList.add('animated', 'fadeIn')
+  infoWrapper.style.display = 'flex'
+  //6 close the pop when clicking outside
+  infoWrapper.onclick = () => {
+    infoWrapper.style.display = 'none'
   }
-}*/
+}

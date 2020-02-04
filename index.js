@@ -1,5 +1,9 @@
 let results = []
 
+const sortMyResults1 = document.getElementById('button1')
+const sortMyResults2 = document.getElementById('button2')
+const sortMyResults3 = document.getElementById('button3')
+
 // Render results function
 
 function displayResults(arr) {
@@ -13,12 +17,15 @@ function displayResults(arr) {
     newItem.src = posterLink
     table.appendChild(newItem)
 
-    /*const movieTitle = document.getElementById('title');
-    const titleLink= `${result.title}`
-    let titleBelow= document.createElement('span');
-     titleBelow.innerHTML= titleLink;
-     movieTitle.appendChild(titleBelow);*/
-    //
+    sortMyResults1.addEventListener('click', () => sortVotecount(arr))
+    sortMyResults2.addEventListener('click', () => releaseDate(arr))
+    sortMyResults3.addEventListener('click', () => sortVoteAverage(arr))
+
+    /*const movieTitle = document.getElementById('title')
+    const titleLink = `${result.title}`
+    let titleBelow = document.createElement('span')
+    titleBelow.innerHTML = titleLink
+    movieTitle.appendChild(titleBelow)*/
   })
 }
 
@@ -61,10 +68,9 @@ submit.onclick = () => onSearch()
 
 // 3 sort functions
 
-function releaseDate(results) {
-  if (!results.length) return
+function releaseDate(arr) {
   table.innerHTML = ''
-  results.sort((a, b) => {
+  arr.sort((a, b) => {
     let newDate = Date.parse(a.release_date)
     let newDate2 = Date.parse(b.release_date)
     return newDate > newDate2 ? -1 : 1
@@ -92,14 +98,6 @@ function sortVoteAverage(arr) {
 }
 
 // event listners and thier const
-function dropdownActions(arr) {
-  const sortMyResults1 = document.getElementById('button1')
-  const sortMyResults2 = document.getElementById('button2')
-  const sortMyResults3 = document.getElementById('button3')
-  sortMyResults1.addEventListener('click', () => sortVotecount(arr))
-  sortMyResults2.addEventListener('click', () => releaseDate(arr))
-  sortMyResults3.addEventListener('click', () => sortVoteAverage(arr))
-}
 
 /* display and animation function
 

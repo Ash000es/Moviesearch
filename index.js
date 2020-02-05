@@ -1,8 +1,11 @@
-let results = []
+let results1 = []
 
 const sortMyResults1 = document.getElementById('button1')
 const sortMyResults2 = document.getElementById('button2')
 const sortMyResults3 = document.getElementById('button3')
+sortMyResults1.addEventListener('click', () => sortVotecount(results))
+sortMyResults2.addEventListener('click', () => releaseDate(results1))
+sortMyResults3.addEventListener('click', () => sortVoteAverage(results))
 
 // Render results function
 
@@ -20,10 +23,6 @@ function displayResults(arr) {
     newItem.src = posterLink
     table.appendChild(newItem)
 
-    sortMyResults1.addEventListener('click', () => sortVotecount(arr))
-    sortMyResults2.addEventListener('click', () => releaseDate(arr))
-    sortMyResults3.addEventListener('click', () => sortVoteAverage(arr))
-
     /*const movieTitle = document.getElementById('title')
     const titleLink = `${result.title}`
     let titleBelow = document.createElement('span')
@@ -39,12 +38,18 @@ fetch(
   .then(function(response) {
     return response.json()
   })
-  .then(function(myJson) {
-    // console.log(myJson);
-    const { results } = myJson
+  .then(myJson => {
+    console.log(myJson)
+    const {results} = myJson
+    results1.push(results)
+
     console.log(results)
     return displayResults(results)
   })
+
+setTimeout(function() {
+  console.log(results1)
+}, 3000)
 
 // fetch with keywords
 
@@ -58,7 +63,7 @@ function onSearch() {
       return response.json()
     })
     .then(function(myJson) {
-      const { results } = myJson
+      const {results} = myJson
       console.log(results)
       table.innerHTML = ''
       return displayResults(results)
@@ -72,13 +77,15 @@ submit.onclick = () => onSearch()
 // 3 sort functions
 
 function releaseDate(arr) {
+  console.log(arr)
   table.innerHTML = ''
   arr.sort((a, b) => {
     let newDate = Date.parse(a.release_date)
     let newDate2 = Date.parse(b.release_date)
-    return newDate > newDate2 ? -1 : 1
     console.log(arr)
+    return newDate > newDate2 ? -1 : 1
   })
+
   return displayResults(arr)
 }
 

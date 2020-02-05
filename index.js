@@ -1,11 +1,11 @@
-let results1 = []
+const results1 = []
 
 const sortMyResults1 = document.getElementById('button1')
 const sortMyResults2 = document.getElementById('button2')
 const sortMyResults3 = document.getElementById('button3')
-sortMyResults1.addEventListener('click', () => sortVotecount(results))
+sortMyResults1.addEventListener('click', () => sortVotecount(results1))
 sortMyResults2.addEventListener('click', () => releaseDate(results1))
-sortMyResults3.addEventListener('click', () => sortVoteAverage(results))
+sortMyResults3.addEventListener('click', () => sortVoteAverage(results1))
 
 // Render results function
 
@@ -77,34 +77,43 @@ submit.onclick = () => onSearch()
 // 3 sort functions
 
 function releaseDate(arr) {
-  console.log(arr)
   table.innerHTML = ''
-  arr.sort((a, b) => {
-    let newDate = Date.parse(a.release_date)
-    let newDate2 = Date.parse(b.release_date)
-    console.log(arr)
-    return newDate > newDate2 ? -1 : 1
-  })
+  console.log(arr)
+  arr.map(elment => {
+    elment.sort(function(a, b) {
+      let newDate = Date.parse(a.release_date)
+      let newDate2 = Date.parse(b.release_date)
 
-  return displayResults(arr)
+      return newDate2 - newDate
+    })
+    return displayResults(elment)
+  })
 }
 
 function sortVotecount(arr) {
   table.innerHTML = ''
-  arr.sort((a, b) => {
-    return a.vote_count > b.vote_count ? -1 : 1
-    console.log(arr)
+  console.log(arr)
+  arr.map(elment => {
+    console.log(elment)
+    elment.sort(function(a, b) {
+      return b.vote_count - a.vote_count
+      console.log(elment)
+    })
+    return displayResults(elment)
   })
-  return displayResults(arr)
 }
 
 function sortVoteAverage(arr) {
   table.innerHTML = ''
-  arr.sort((a, b) => {
-    return a.vote_average > b.vote_average ? -1 : 1
-    console.log(arr)
+  console.log(arr)
+  arr.map(elment => {
+    console.log(elment)
+    elment.sort(function(a, b) {
+      return b.vote_average - a.vote_average
+      console.log(elment)
+    })
+    return displayResults(elment)
   })
-  return displayResults(arr)
 }
 
 // event listners and thier const

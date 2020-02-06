@@ -1,4 +1,4 @@
-const results1 = []
+let results1 = []
 
 const sortMyResults1 = document.getElementById('button1')
 const sortMyResults2 = document.getElementById('button2')
@@ -21,6 +21,7 @@ function displayResults(arr) {
     //2. get the movie overview info
     newItem.addEventListener('click', () => onClickPoster(subarr.overview))
     newItem.src = posterLink
+    newItem.classList.add('classname')
     table.appendChild(newItem)
 
     /*const movieTitle = document.getElementById('title')
@@ -102,6 +103,14 @@ function sortVotecount(arr) {
     return displayResults(elment)
   })
 }
+/*function sortVotecount(arr) {
+  table.innerHTML = ''
+  arr.sort((a, b) => {
+    return b.vote_count - a.vote_count
+    console.log(arr)
+  })
+  return displayResults(arr)
+}*/
 
 function sortVoteAverage(arr) {
   table.innerHTML = ''

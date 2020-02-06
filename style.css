@@ -16,6 +16,14 @@ body {
   max-width: 50%;
 }
 
+.classname {
+  margin: 10px;
+  border-style: solid;
+  border-color: firebrick;
+  border-width: 1rem;
+  align-content: space-between;
+}
+
 #infoWrapper {
   justify-content: center;
   align-items: center;

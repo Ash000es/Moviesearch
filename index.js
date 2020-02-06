@@ -32,6 +32,25 @@ function displayResults(arr) {
   })
 }
 
+const info = document.getElementById('modolo')
+const infoWrapper = document.getElementById('infoWrapper')
+
+//add the animated class to the popupwrapper
+//set onclick for the popup wrapper*/
+function onClickPoster(plot) {
+  info.innerHTML = plot
+  //4. add movie overview info to the pop up
+  /*infoWrapper.style.display = 'block'
+  // 5. animate the pop up
+  infoWrapper.classList.add('animated', 'fadeIn')
+  info.classList.add('animated', 'fadeIn')
+  infoWrapper.style.display = 'flex'
+  //6 close the pop when clicking outside
+  infoWrapper.onclick = () => {
+    infoWrapper.style.display = 'none'
+  }*/
+}
+
 // default fetch by popularity
 fetch(
   'https://api.themoviedb.org/3/movie/popular?api_key=3e12504afe592b359b01ff7d91ac166f&language=en-US&page=1'
@@ -130,21 +149,3 @@ function sortVoteAverage(arr) {
 // display and animation function
 
 //3. create an empty pop up
-const info = document.getElementById('info')
-const infoWrapper = document.getElementById('infoWrapper')
-
-//add the animated class to the popupwrapper
-//set onclick for the popup wrapper*/
-function onClickPoster(plot) {
-  info.innerHTML = plot
-  //4. add movie overview info to the pop up
-  infoWrapper.style.display = 'block'
-  // 5. animate the pop up
-  infoWrapper.classList.add('animated', 'fadeIn')
-  info.classList.add('animated', 'fadeIn')
-  infoWrapper.style.display = 'flex'
-  //6 close the pop when clicking outside
-  infoWrapper.onclick = () => {
-    infoWrapper.style.display = 'none'
-  }
-}

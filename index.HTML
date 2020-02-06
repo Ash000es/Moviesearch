@@ -14,13 +14,67 @@
 </head>
 
 <body class='bg-dark'>
-  <div id="infoWrapper">
-    <div id="info"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white ">
+    <a class="navbar-brand text-white font-weight-bold border-bottom" href="#">Movie Time</a>
+    <button class="navbar-toggler justify-content-around" type="button" data-toggle="collapse"
+      data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+      <ul class="navbar-nav nav-fill w-100 my-2 font-weight-bold border-bottom">
+        <li class="nav-item active text-white align-content-between">
+          <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Trending</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Reviews</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            More
+          </a>
+          <div class="dropdown-menu text-white" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item text-white" href="#">Action</a>
+            <a class="dropdown-item text-white" href="#">Another action</a>
+            <a class="dropdown-item text-white" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Film overview</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id='modolo'>
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
   </div>
+
   <div class="container bg-dark">
     <div class="row align-items-center">
       <div class="col">
-        <div class='border border-dark banner w-100 h-75 d-flex'><img src='' alt='movie time'></div>
+
 
 
         <h1 class=" m-3 text-center font-weight-bold text-white search">Ready to watch? </h1>
@@ -53,13 +107,15 @@
 
   <div class='row justify-content-around border border-danger m-2 p-3'>
     <div class="col ">
-      <div id="table" class=' border border-danger m-3 p-3'>
+      <div id="table" class=' border border-danger m-3 p-3' data-toggle="modal" data-target="#exampleModalCenter">
       </div>
       <div id="title" class='border border-dark d-inline'></div>
     </div>
 
   </div>
-
+  <script>$('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })</script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>

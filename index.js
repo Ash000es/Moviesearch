@@ -12,23 +12,26 @@ sortMyResults3.addEventListener('click', () => sortVoteAverage(results1))
 function displayResults(arr) {
   return arr.map(subarr => {
     //console.log(subarr.poster_path)
-    const table = document.getElementById('table')
-    if (!subarr.poster_path) return
-    const posterLink = `http://image.tmdb.org/t/p/w185//${subarr.poster_path}`
 
+    if (!subarr.poster_path) return
+    const table = document.getElementById('table')
+    //const ul = document.getElementById('list')
+    const posterLink = `http://image.tmdb.org/t/p/w185//${subarr.poster_path}`
+    //const titleLink = `${result.title}`
+
+    //let li = document.createElement('li')
+    //let span = document.createElement('span')
     let newItem = document.createElement('img')
-    // 1. when you click on the poster then log to the console.
-    //2. get the movie overview info
+
     newItem.addEventListener('click', () => onClickPoster(subarr.overview))
     newItem.src = posterLink
+    //span.innerHTML = titleLink
     newItem.classList.add('classname')
     table.appendChild(newItem)
 
-    /*const movieTitle = document.getElementById('title')
-    const titleLink = `${result.title}`
-    let titleBelow = document.createElement('span')
-    titleBelow.innerHTML = titleLink
-    movieTitle.appendChild(titleBelow)*/
+    /*li.appendChild(newItem)
+    li.appendChild(span)
+    ul.appendChild(li)*/
   })
 }
 
@@ -143,9 +146,3 @@ function sortVoteAverage(arr) {
     return displayResults(elment)
   })
 }
-
-// event listners and thier const
-
-// display and animation function
-
-//3. create an empty pop up
